@@ -1,0 +1,8 @@
+Abstract: Online Movie ticket booking system 
+This website is very useful considering the pandemic
+Here on this website, I am coming up with an online movie ticket booking app
+It contains two views one is for customer and another is for owner 
+The customer can book the seats and also can cancel the tickets 
+The moment he cancel or book the ticket he will be notified 
+The owner can see how many seats have been filled and also can delete some seats if he wants.
+login /register/logout will be there and based on the login the user will see their representative views
