@@ -1,0 +1,44 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+                <h2>Log in</h2>
+                <form action="{% url 'signin' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Username:</label>
+                        <div class="col-10">
+                            <input name='name' class="form-control" type="text" id="example-email-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Password:</label>
+                        <div class="col-10">
+                            <input name='password' class="form-control" type="password">
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <center><button type="Submit" class="btn btn-primary ">Sign in</button></center>
+                    </div>
+
+                </form>
+                <div class="alert alert-primary alert-dismissible mt-3 fade show" role="alert">
+                     <b>{{error}}</b> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                
+            </div>
+        </div>
+
+    </div>
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+        background-size: cover;
+        color: azure;
+    }
+    
+</style>
+{% endblock %}
+

@@ -1,0 +1,75 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<h3>{{msg}}</h3>
+<center><h2>List of Movies</h2></center>
+<table class="table table-striped" >
+    <thead style="background-color: rgb(57, 82, 128);color: white;">
+    <td>Moive ID</td>
+    <td>NAME</td>
+    <td>Screen</td>
+    <!-- <td>DESTINATION</td> -->
+    <td>NUM OF SEATS</td>
+    <td>NUM OF SEATS REM</td>
+    <td>PRICE</td>
+    <td>DATE</td>
+    <td>TIME</td>
+
+    </thead>
+
+    {% for row in bus_list %}
+    <tr>
+        <td>{{row.id }}</td>
+        <td>{{row.bus_name}}</td>
+        <td>{{row.source}}</td>
+        <!-- <td>{{row.dest}}</td> -->
+        <td>{{row.nos}}</td>
+        <td>{{row.rem}}</td>
+        <td>{{row.price}}</td>
+        <td>{{row.date}}</td>
+        <td>{{row.time}}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+<form action="{% url 'bookings' %}" method="post">
+    <center><h3>Choose Movie to book</h3></center>
+    {% csrf_token %}
+    <div class="col-auto">
+        <center><label for="example-email-input" class="col-2 col-form-label">Movie ID</label></center>
+        <center><div class="col-5">
+            <input name='bus_id' class="form-control" type="number" id="example-email-input">
+        </div></center>
+    </div>
+    <div class="col=auto">
+        <center><label for="example-email-input" class="col-2 col-form-label">Number of seats</label></center>
+        <center><div class="col-5">
+            <input name='no_seats' class="form-control" type="number">
+        </div>
+        </center>
+    </div>
+    <br>
+    <br>
+    <div class="pull-right">
+        <button type="submit" class="btn btn-primary ">Book Moive</button>
+    </div>
+
+
+    {{error}}
+
+</form>
+<style>
+    body{
+        background-image: url('https://assets.skyfilabs.com/images/blog/movie-ticket-booking-system.webp');
+        background-size: cover;
+        color: aliceblue;
+    }
+    table{
+        color: rgb(255, 255, 255);
+    }
+    button{
+        margin-left: 47%;
+    }
+</style>
+
+{% endblock %}

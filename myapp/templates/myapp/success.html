@@ -1,0 +1,37 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+            <form action="{% url 'signout' %}" method="post">
+                {% csrf_token %}
+                <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                    <strong>{{user}} </strong> logged in successfully
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+                            <h3>
+                                “Everything I learned I learned from the
+                                movies.”
+                                ― Audrey Hepburn
+                            </h3>
+    </div>
+
+</div>
+<style>
+    body {
+         background-image: url('https://images.unsplash.com/photo-1508427991396-70954459dcc4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk1fHxtb3ZpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+        background-size: cover;
+    }
+    h3{
+        color: aliceblue;
+        margin-left: 60%;
+        margin-top: 10%;
+    }
+
+</style>
+{% endblock %}
